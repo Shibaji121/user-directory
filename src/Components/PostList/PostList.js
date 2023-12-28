@@ -15,7 +15,7 @@ const PostList = ({ userId }) => {
     <div className="postlist-container">
       {postList.map((post) => {
         return (
-          <div className="post-container">
+          <div key={post?.id} className="post-container">
             <h4 className="post-title">{post?.title}</h4>
             <div className="post-body">{post?.body}</div>
           </div>
