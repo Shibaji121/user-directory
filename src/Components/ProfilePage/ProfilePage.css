@@ -1,0 +1,44 @@
+.profile-page {
+  width: 90%;
+  margin: auto;
+  margin-top: 1rem;
+}
+.profile-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header-right {
+  display: flex;
+  align-items: center;
+}
+.back-btn > button {
+  width: 100%;
+  padding: 0.3rem 1rem;
+  background-color: rgb(150, 248, 4);
+  color: white;
+  font-size: larger;
+  font-weight: 500;
+  border-radius: 20px;
+  cursor: pointer;
+}
+.header-right > select {
+  width: 62%;
+  font-size: large;
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+}
+.profile-heading {
+  text-align: center;
+  color: brown;
+}
+.profile-details {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  font-size: larger;
+}
+.details-left > h3 {
+  margin: 0;
+}
