@@ -9,7 +9,7 @@ const ProfilePage = () => {
   const navigate = useNavigate();
   const [user, setUser] = useState();
   const [countryList, setCountryList] = useState([]);
-  const [country, setCountry] = useState("Africa/Abidjan");
+  const [country, setCountry] = useState("Asia/Kolkata");
 
   useEffect(() => {
     const url = `https://jsonplaceholder.typicode.com/users/${params.userId}`;
@@ -35,7 +35,7 @@ const ProfilePage = () => {
           </button>
         </div>
         <div className="header-right">
-          <select onChange={(e) => setCountry(e.target.value)}>
+          <select value={country} onChange={(e) => setCountry(e.target.value)}>
             {countryList.map((country, index) => {
               return <option key={index}>{country}</option>;
             })}
