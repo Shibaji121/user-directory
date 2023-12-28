@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import "../ProfilePage/ProfilePage.css";
 import { useNavigate, useParams } from "react-router-dom";
 import StopClock from "../StopClock/StopClock";
+import PostList from "../PostList/PostList";
 
 const ProfilePage = () => {
   const params = useParams();
@@ -59,6 +60,7 @@ const ProfilePage = () => {
           </div>
         </div>
       </div>
+      <PostList userId={params.userId} />
     </div>
   );
 };
