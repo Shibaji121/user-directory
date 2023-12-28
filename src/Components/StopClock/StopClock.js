@@ -3,8 +3,11 @@ import "../StopClock/StopClock.css";
 
 const StopClock = ({ country }) => {
   return (
-    <div>
-      <div>{country}</div>
+    <div className="clock-container">
+      <div className="clock-bg">
+        <div className="clock">00 : 00 : 00</div>
+      </div>
+      <button type="submit">Pause/Start</button>
     </div>
   );
 };

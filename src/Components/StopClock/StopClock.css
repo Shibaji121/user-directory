@@ -1,0 +1,25 @@
+.clock-container {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.clock-bg {
+  background-color: #0e1f26;
+  width: 7rem;
+  padding: 0.5rem;
+  border-radius: 10px;
+  text-align: center;
+}
+.clock {
+  color: white;
+  font-size: larger;
+}
+.clock-container > button {
+  padding: 0.3rem 1rem;
+  background-color: rgb(150, 248, 4);
+  color: white;
+  font-size: larger;
+  font-weight: 500;
+  border-radius: 20px;
+  cursor: pointer;
+}
