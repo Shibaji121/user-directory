@@ -1,0 +1,26 @@
+.homepage {
+  width: 95%;
+  margin: auto;
+}
+.header {
+  text-align: center;
+  color: brown;
+}
+.user-list {
+  width: 70%;
+  margin: auto;
+}
+.user-item {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background-color: aqua;
+  border-radius: 15px;
+  box-shadow: 0px 6px 15px 2px;
+  margin-bottom: 3rem;
+  padding: 1rem;
+  font-weight: 600;
+  font-style: italic;
+  cursor: pointer;
+}
