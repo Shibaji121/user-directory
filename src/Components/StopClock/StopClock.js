@@ -11,7 +11,7 @@ const StopClock = ({ country }) => {
     const fetchData = async () => {
       let timedate;
       try {
-        const url = `http://worldtimeapi.org/api/timezone/${country}`;
+        const url = `https://worldtimeapi.org/api/timezone/${country}`;
         const response = await fetch(url);
         timedate = await response.json();
       } catch (error) {
