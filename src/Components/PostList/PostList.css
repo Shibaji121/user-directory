@@ -27,6 +27,7 @@
   white-space: normal;
   color: #000087;
 }
+
 @media (max-width: 1280px) {
   .post-body {
     -webkit-line-clamp: 4;

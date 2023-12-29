@@ -3,6 +3,7 @@ import "../ProfilePage/ProfilePage.css";
 import { useNavigate, useParams } from "react-router-dom";
 import StopClock from "../StopClock/StopClock";
 import PostList from "../PostList/PostList";
+import Skeleton from "react-loading-skeleton";
 
 const ProfilePage = () => {
   const params = useParams();
@@ -35,30 +36,68 @@ const ProfilePage = () => {
           </button>
         </div>
         <div className="header-right">
-          <select value={country} onChange={(e) => setCountry(e.target.value)}>
-            {countryList.map((country, index) => {
-              return <option key={index}>{country}</option>;
-            })}
-          </select>
+          {countryList.length === 0 ? (
+            <Skeleton
+              width="30vw"
+              height={40}
+              baseColor="#afafaf"
+              highlightColor="#7a7979"
+            />
+          ) : (
+            <select
+              value={country}
+              onChange={(e) => setCountry(e.target.value)}
+            >
+              {countryList.map((country, index) => {
+                return <option key={index}>{country}</option>;
+              })}
+            </select>
+          )}
           <StopClock country={country} />
         </div>
       </div>
       <h1 className="profile-heading">Profile Page</h1>
       <div className="profile-details">
-        <div className="details-left">
-          <h3>{user?.name}</h3>
-          <div className="ct-phrase">
-            {user?.username} | {user?.company?.catchPhrase}
+        {!user ? (
+          <>
+            <Skeleton
+              width="30vw"
+              height={30}
+              count={2}
+              baseColor="#afafaf"
+              highlightColor="#7a7979"
+            />
+          </>
+        ) : (
+          <div className="details-left">
+            <h3>{user?.name}</h3>
+            <div className="ct-phrase">
+              {user?.username} | {user?.company?.catchPhrase}
+            </div>
           </div>
-        </div>
-        <div className="details-right">
-          <div className="addr">
-            {user?.address?.street},{user?.address?.suite},{user?.address?.city}
+        )}
+
+        {!user ? (
+          <>
+            <Skeleton
+              width="30vw"
+              height={30}
+              count={2}
+              baseColor="#afafaf"
+              highlightColor="#7a7979"
+            />
+          </>
+        ) : (
+          <div className="details-right">
+            <div className="addr">
+              {user?.address?.street},{user?.address?.suite},
+              {user?.address?.city}
+            </div>
+            <div className="email">
+              {user?.email} | {user?.phone}
+            </div>
           </div>
-          <div className="email">
-            {user?.email} | {user?.phone}
-          </div>
-        </div>
+        )}
       </div>
       <hr />
       <PostList userId={params.userId} />

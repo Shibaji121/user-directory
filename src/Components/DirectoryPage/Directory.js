@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "../DirectoryPage/Directory.css";
 import { Link } from "react-router-dom";
+import Skeleton from "react-loading-skeleton";
 
 const Directory = () => {
   const [userList, setUserList] = useState([]);
@@ -16,11 +17,24 @@ const Directory = () => {
   return (
     <div className="homepage">
       <h1 className="header">Directory</h1>
-      <div className="user-list">
-        {userList.map((user) => {
-          return <UserDetail key={user?.id} user={user} />;
-        })}
-      </div>
+      {userList.length === 0 ? (
+        <div className="user-list">
+          <Skeleton
+            height={50}
+            width="100%"
+            style={{ margin: "1rem 0" }}
+            count={10}
+            baseColor="#afafaf"
+            highlightColor="#7a7979"
+          />
+        </div>
+      ) : (
+        <div className="user-list">
+          {userList.map((user) => {
+            return <UserDetail key={user?.id} user={user} />;
+          })}
+        </div>
+      )}
     </div>
   );
 };
