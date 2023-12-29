@@ -5,16 +5,11 @@ export default function Popup({ handleClose, children }) {
   const popupRef = useRef();
   useEffect(() => {
     const handleClickOutside = (event) => {
-      console.log(popupRef);
-      console.log(popupRef.current);
-      console.log(event.target);
-      console.log(event.target.contains(popupRef.current));
       if (event.target.contains(popupRef.current)) {
         handleClose();
       }
     };
     document.addEventListener("click", handleClickOutside);
-
     return () => {
       document.removeEventListener("click", handleClickOutside);
     };

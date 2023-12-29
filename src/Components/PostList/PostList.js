@@ -16,13 +16,11 @@ const PostList = ({ userId }) => {
   }, [userId]);
 
   const handlePostClick = (post) => {
-    console.log("click");
     setIsPostClick(true);
     setPost(post);
   };
 
   const handleClose = () => {
-    console.log("close");
     setIsPostClick(false);
   };
 
