@@ -21,7 +21,7 @@ const ProfilePage = () => {
   }, [params]);
 
   useEffect(() => {
-    const url = "http://worldtimeapi.org/api/timezone";
+    const url = "https://worldtimeapi.org/api/timezone";
     fetch(url)
       .then((response) => response.json())
       .then((list) => setCountryList(list))
