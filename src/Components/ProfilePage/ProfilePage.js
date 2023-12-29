@@ -60,6 +60,7 @@ const ProfilePage = () => {
           </div>
         </div>
       </div>
+      <hr />
       <PostList userId={params.userId} />
     </div>
   );

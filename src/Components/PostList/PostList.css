@@ -2,7 +2,7 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 20px;
-  margin-top: 1rem;
+  margin-top: 1.5rem;
 }
 .post-container {
   border: 1px solid;
@@ -12,6 +12,7 @@
   flex-direction: column;
   justify-content: space-between;
   cursor: pointer;
+  box-shadow: 0px 0px 9px 2px darkslateblue;
 }
 .post-title {
   text-align: center;
